@@ -1,0 +1,18 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "infra/db/schemas/nir/referential/referential.sql"
+    schema: "infra/db/schemas/nir/referential/schema.sql"
+    gen:
+      go:
+        package: "referential"
+        out: "infra/db/schemas/nir/referential/referential"
+        sql_package: "pgx/v5"
+  - engine: "postgresql"
+    queries: "infra/db/schemas/nir/results/results.sql"
+    schema: "infra/db/schemas/nir/results/schema.sql"
+    gen:
+      go:
+        package: "results"
+        out: "infra/db/schemas/nir/results/results"
+        sql_package: "pgx/v5"

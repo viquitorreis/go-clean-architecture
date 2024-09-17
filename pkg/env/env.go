@@ -1,0 +1,5 @@
+package env
+
+var (
+	DatabaseUrl = ""
+)
